@@ -1,5 +1,5 @@
 import express from 'express';
-import {getUserContents} from '../services/userService.js';
+import {getUserContents, getUserTable} from '../services/userService.js';
 
 var router = express.Router();
 
@@ -10,7 +10,8 @@ router.get('/', (req, res) => {
 
 
 router.get('/table', (req, res) => {
-	res.render('user/table', {contents:'table'});
+	const table = getUserTable();
+	res.render('user/table', {table:table});
 });
 
 

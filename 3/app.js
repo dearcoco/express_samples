@@ -8,6 +8,11 @@ import rootRouter from './routes/index.js';
 import createError from 'http-errors';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -17,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 //--> static
-app.use(express.static('./public'));
+app.use(express.static(__dirname + '/public'));
 //<--
 
 //--> view

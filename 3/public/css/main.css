@@ -1,3 +1,11 @@
 .testbox {
 	background-color: lime;
 }
+table {
+	border: solid; 
+	border-collapse: collapse;
+}
+tr td {
+	border: solid; 
+	
+}
